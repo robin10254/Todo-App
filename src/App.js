@@ -99,18 +99,24 @@ function App() {
   };
   
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Todo List App</h3>
-      <input 
-      type="text"
-      placeholder="type here"
-      onChange={(e) => setName(e.target.value)}
-      value = {name}></input>
-      <button type="submit">Submit</button>
+    <section className="section-center">
+      <form onSubmit={handleSubmit}>
+        <h3 style={{marginBottom: "1.5rem", textAlign: "center"}}>Todo List App</h3>
+        <div className="mb-3 form">
+          <input 
+          type="text"
+          className="form-control"
+          placeholder="add task"
+          onChange={(e) => setName(e.target.value)}
+          value = {name}></input>
+          <button type="submit" className="btn btn-success">Submit</button>
+        </div>
+      </form>
       {list.length > 0 && (
-        <List items={list} removeItem={removeItem} editItem={editItem} markItem={markItem}/>
+          <List items={list} removeItem={removeItem} editItem={editItem} markItem={markItem}/>
       )}
-    </form>
+    </section>
+    
   );
 }
 
