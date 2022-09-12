@@ -1,13 +1,18 @@
 import React from 'react';
 
-const List = ({ items, removeItem, editItem}) => {
+const List = ({ items, removeItem, editItem, markItem}) => {
+    
     return (
         <div>
             { items.map(( item ) => {
-                const {id, title} = item;
+                const { id, title} = item;
                 return (
                     <ul key={id}>
                         <li>
+                            <input 
+                            type="checkbox" 
+                            onClick={() => markItem(id)} 
+                            />
                             {title}
                         </li>
                         <div>
